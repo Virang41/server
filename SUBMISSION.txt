@@ -1,0 +1,176 @@
+
+                    ASSIGNMENT 6 SUBMISSION
+         Creating a Simple Web Server with Node.js
+
+
+Student Name: [Virang Kathiriya]  
+Date: February 8, 2026  
+
+
+
+
+
+  1.  PROJECT STRUCTURE
+
+  
+├── server.js              Main server file (Node.js)  
+├── css/  
+│   └── styles.css         CSS styling for all pages  
+└── pages/  
+    ├── home.html          Home page  
+    ├── about.html         About page  
+    ├── contact.html       Contact page  
+    ├── services.html      Services page  
+    └── 404.html           404 error page  
+
+
+  2.  HOW THE SERVER WORKS
+
+
+1. SERVER CREATION:  
+   - The server is built using Node.js's built-in 'http' module.  
+   - It listens on port 3000 for incoming requests.  
+   - It uses the 'fs' module to read HTML files asynchronously.  
+   - It uses the 'path' module to manage file paths.  
+
+2. ROUTING LOGIC:  
+   - When a user visits '/' or '/home', the home page is served.  
+   - When a user visits '/about', the about page is served.  
+   - When a user visits '/contact', the contact page is served.  
+   - When a user visits '/services', the services page is served (extra route).  
+   - When a user visits '/styles.css', the CSS file is served.  
+   - Any other route will display the custom 404 error page.  
+
+3. MODULAR FUNCTIONS:  
+   - serveFile() reads the file and sends a response with the proper content type.  
+   - serve404Page() handles invalid routes and shows the error page.  
+
+4. ASYNCHRONOUS FILE READING:  
+   - The server uses fs.readFile(), which is non-blocking.  
+   - This allows the server to handle multiple requests at the same time.  
+   - It improves performance compared to synchronous reading.  
+
+5. ERROR HANDLING:  
+   - If the requested route is not found, the server serves the 404 page.  
+   - If file reading fails, a plain text error message is displayed.  
+   - Proper HTTP status codes are used (200 for success and 404 for not found).  
+
+
+3. ROUTES IMPLEMENTED
+
+
+Route           | URL                              | Description  
+ 
+Home            | http://localhost:3000/home       | Main landing page  
+About           | http://localhost:3000/about      | Company information page  
+Contact         | http://localhost:3000/contact    | Contact form and details  
+Services        | http://localhost:3000/services   | Laundry services with prices  
+404 Error       | http://localhost:3000/xyz        | Custom error page  
+
+-
+4.TESTING RESULTS
+
+
+Route           | Status Code  | Result  
+----------------|--------------|------------------------------------------  
+/home           | 200 OK       | Page loads successfully and style  
+/about          | 200 OK       | Page loads successfully and style
+/contact        | 200 OK       | Page loads successfully and style 
+/services       | 200 OK       | Page loads successfully and style 
+/styles.css     | 200 OK       | CSS file served correctly  
+/invalid-route  | 404 Not Found| Custom 404 page displayed correctly  
+
+
+5.SERVER CONSOLE LOG
+
+
+PS C:\Users\LENOVO\Desktop\code\assignment 6> node server.js  
+Server is running on http://localhost:3000  
+Available routes:  
+  - /home (or /)  
+  - /about  
+  - /contact  
+  - /services  
+
+
+6. FEATURES IMPLEMENTED
+
+
+Server listens on port 3000  
+Routes for /home, /about, /contact are implemented  
+Additional /services route added (extra feature)  
+Proper HTTP status codes (200, 404)  
+Asynchronous file reading with fs.readFile()  
+Modular code with separate functions  
+Custom 404 error page for invalid routes  
+CSS styling with modern design  
+Responsive design for mobile devices  
+Navigation between all pages  
+Clean and fresh laundry themed website  
+
+
+7.HOW TO RUN
+
+
+Step 1: Clone the repository  
+        git clone https://github.com/Virang41/server.git  
+
+Step 2: Open the terminal in the project folder  
+
+Step 3: Run the server  
+        node server.js  
+
+Step 4: Open a browser and go to  
+        http://localhost:3000  
+
+Step 5: Test different routes  
+        - /home  
+        - /about  
+        - /contact  
+        - /services  
+        - /any-invalid-route (for 404 page)  
+
+ 8.  GITHUB REPOSITORY LINK
+
+https://github.com/Virang41/server.git
+
+
+ 9.  SCREENSHOTS OF HTML ROUTE PAGES
+
+
+Screenshot 1: Server Running in Terminal
+         File: Screenshot 2026-02-09 174748.png
+         Shows: VS Code terminal with server running on port 3000
+
+Screenshot 2: Home Page (/home route)
+         File: Screenshot 2026-02-09 175657.png
+         Shows: Home page with navigation, hero section and features
+         URL: http://localhost:3000/home
+         Status Code: 200 OK
+
+Screenshot 3: About Page (/about route)
+         File: Screenshot 2026-02-09 175839.png
+         Shows: About page with company information and statistics
+         URL: http://localhost:3000/about
+         Status Code: 200 OK
+
+Screenshot 4: Services Page (/services route)
+         File: Screenshot 2026-02-09 175905.png
+         Shows: Services page with laundry service cards and pricing
+         URL: http://localhost:3000/services
+         Status Code: 200 OK
+
+Screenshot 5: Contact Page (/contact route)
+         File: Screenshot 2026-02-09 180131.png
+         Shows: Contact page with form and contact information
+         URL: http://localhost:3000/contact
+         Status Code: 200 OK
+
+Screenshot 6: 404 Error Page (invalid route)
+         File: Screenshot 2026-02-09 180415.png
+         Shows: Custom 404 error page for invalid routes
+         URL: http://localhost:3000/xyz
+         Status Code: 404 Not Found
+
+
+
